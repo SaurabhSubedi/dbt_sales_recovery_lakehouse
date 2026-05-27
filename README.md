@@ -1,2 +1,2 @@
 # dbt_sales_recovery_lakehouse
-A modern medallion-architecture data engineering platform built with dbt and PostgreSQL for sales recovery, collection tracking, field visits, and operational analytics using Bronze, Silver, and Gold data layers.
+An end-to-end analytics engineering pipeline using dbt and PostgreSQL with Bronze, Silver, and Gold layers to analyze sales recovery operations, collection visits, agent performance, and recovered amounts through dimensional modeling, incremental pipelines, and data quality testing.
