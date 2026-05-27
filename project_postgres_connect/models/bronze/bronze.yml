@@ -1,0 +1,14 @@
+models:
+  - name: ac
+    config:
+      materialized: table
+  - name: pcp
+    config:
+      materialized: table
+  - name: cd
+    config:
+      materialized: table
+    
+  - name: mac
+    config:
+      materialized: table

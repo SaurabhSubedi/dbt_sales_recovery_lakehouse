@@ -1,0 +1,9 @@
+sources:
+  - name: source_tbl
+    database: Collections_NSN  
+    schema: public  
+    tables:
+      - name: actual_collection
+      - name: master_actual_collection
+      - name: collection_data
+      - name: party_collection_plans

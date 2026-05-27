@@ -1,0 +1,92 @@
+version: 2
+
+models:
+  - name: dim_areas
+    config:
+      materialized: view
+    columns:
+      - name: area_id
+        data_tests:
+          - unique
+          - not_null
+      - name: area
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_collection_agents
+    config:
+      materialized: view
+    columns:
+      - name: col_agent_id
+        data_tests:
+          - unique
+          - not_null
+      - name: email
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_parties
+    config:
+      materialized: view
+    columns:
+      - name: party_id
+        data_tests:
+          - unique
+          - not_null
+      - name: party_name
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_sales_agents
+    config:
+      materialized: view
+    columns:
+      - name: sales_agent_id
+        data_tests:
+          - unique
+          - not_null
+      - name: sales_agent_name
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fact_cd
+    config:
+      materialized: table
+    columns:
+      - name: party_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_parties')
+                field: party_id
+
+      - name: area_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_areas')
+                field: area_id
+
+      - name: sales_agent_id
+        data_tests:
+         
+          - relationships:
+              arguments:
+                to: ref('dim_sales_agents')
+                field: sales_agent_id
+
+      - name: col_agent_id
+        data_tests:
+        
+          - relationships:
+              arguments:
+                to: ref('dim_collection_agents')
+                field: col_agent_id
+      
+ 

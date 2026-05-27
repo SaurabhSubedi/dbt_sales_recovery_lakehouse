@@ -1,0 +1,9 @@
+snapshots:
+  - name: snap_dim_col_agents
+    relation: ref('dim_collection_agents')
+    config:
+      schema: snapshots
+      unique_key: email
+      strategy: check
+      check_cols:
+        - agent_name

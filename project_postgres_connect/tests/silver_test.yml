@@ -1,0 +1,29 @@
+models:
+  - name: silver_cd
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null
+      - name: agent_name
+        data_tests:
+          - not_null
+      - name: party_details    
+        data_tests:
+          - not_null              
+
+  - name: silver_mac_pcp
+    columns:
+      - name: area
+        data_tests:
+          - not_null
+      - name: sales_agent
+        data_tests:
+          - not_null
+      - name: party_details       
+        data_tests:
+          - not_null            
+          - relationships:
+              arguments:
+                to: ref('dim_parties')
+                field: party_name
